@@ -102,29 +102,31 @@ for (key, value) in dictionaryTwo{
 var counter = 1
 
 while counter <= 100 {
-    //do some stuff
-    counter += 1
+    counter += 2
 }
 
 //Repeat While
 
 var repeatCount = 100
 
-repeat{
+repeat {
     print("This will print at least once.")
-}while repeatCount < 10
+    repeatCount -= 2
+} while repeatCount > 10
+
 
 
 //If Statement
 
 var temperatureInFahrenheit = 50
-if temperatureInFahrenheit <= 32 {
-    print("It's very cold. Consider wearing a scarf.")
-} else if temperatureInFahrenheit == 0{
-    print("It's way too cold! Get inside!")
-} else {
+if temperatureInFahrenheit > 20 {
     print("It's not that cold. Wear a t-shirt.")
+} else if temperatureInFahrenheit < -50{
+    print("It's way too cold! Your eyeballs will freeze!")
+} else {
+    print("It's very cold. Consider wearing a scarf.")
 }
+
 
 
 //Switch Statement
@@ -133,19 +135,23 @@ let someCharacter: Character = "z"
 switch someCharacter {
 case "a":
     print("The first letter of the alphabet")
+case "A", "Z":
+    print("We're not worrying about upper-case right now.")
 case "z":
     print("The last letter of the alphabet")
 default:
     print("Some other character")
 }
 
-let approximateCount = 12
+let approximateCount = 3
 
 let countDescription : String
 
 switch approximateCount {
 case 0:
     countDescription = "none"
+case 2:
+    countDescription = "a couple"
 case 1...5:
     countDescription = "a few"
 case 5..<12:
@@ -177,10 +183,10 @@ default:
 
 var surveyAnswer: String?
 
-surveyAnswer = "This was so much fun!!!"
+//surveyAnswer = "This was so much fun!!!"
 
-if surveyAnswer != nil{
-    print("SurveyAnswer is not nil.")
+if surveyAnswer == nil{
+    print("SurveyAnswer is nil.")
 }
 
 if let surveyAnswer = surveyAnswer{
