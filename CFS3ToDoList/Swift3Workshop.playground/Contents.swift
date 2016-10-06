@@ -58,12 +58,16 @@ set.contains( 8.799999999999999 )  //false
 
 //Array
 let stringsArray = [String]()
-let planetArray = ["Mars", "Jupiter"]
-var intArray = [Int](repeating: 0, count: 5)
+var planetArray = ["Pluto", "Jupiter"]
+var intArray = [Int](repeating: 0, count: 7)
 
 intArray.append(100)
 intArray.append(10)
 intArray.insert(1000, at: 0)
+
+var moreInts: Array = [ 8, 7, 12 ]
+
+intArray += moreInts
 
 let removedValue = intArray.remove(at: 6)
 intArray
@@ -75,7 +79,6 @@ let dictionaryOne = [String : String]()
 var dictionaryTwo = ["name" : "Mars"]
 dictionaryTwo["location"] =  "Home"
 dictionaryTwo["name"] =  "Earth"
-
 dictionaryTwo
 
 
