@@ -9,6 +9,7 @@
 import Foundation
 
 class Todo{
+    
     var text: String
     var identifier: String
 
