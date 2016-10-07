@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol Identity{
+    var identifier: String{ set get }
+}
