@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -16,14 +16,18 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.tableView.dataSource = self
         
-        for number in 1...5{
-            let todo = Todo(text: "Todo Number \(number)")
-            TodoList.shared.add(todo: todo)
-        }
-        
+//        for number in 1...5{
+//            let todo = Todo(text: "Todo Number \(number)")
+//            TodoList.shared.add(todo: todo)
+//        }
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let todo = TodoList.shared.getTodoAt(index: indexPath.row)
         cell.textLabel?.text = todo.text
@@ -31,7 +35,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return TodoList.shared.count()
     }
 }
